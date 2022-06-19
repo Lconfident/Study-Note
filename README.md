@@ -14,4 +14,4 @@
 
 ----
 
-![image](https://github.com/Lconfident/wiki/blob/main/Pictures/5549c5ec7bb62b5b29dce90de7b3918.jpg)
+![image](https://github.com/Lconfident/WIKI/blob/main/Pictures/66721fe018493d3ee212cc01d1fe901.jpg)
