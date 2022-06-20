@@ -2,7 +2,7 @@
 
 ## 个人知识管理
 
-1. JAVA入门知识
+1. [JAVA入门知识](https://github.com/Lconfident/Study-Note/blob/main/Java%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.md)
 
 2. git学习
 
