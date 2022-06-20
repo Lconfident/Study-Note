@@ -219,6 +219,8 @@ H -->I(创建main方法)
 > 
 > 如果zzw不是作为行开头的字符串，则它不会被匹配。
 
+![](https://img.jbzj.com/file_images/article/202112/20211219111248103.jpg)
+
  **$匹配行的结尾位置**
 
 如`zzw$`匹配的是以"zzw"为行结尾的"zzw"
@@ -227,11 +229,11 @@ H -->I(创建main方法)
 > 
 > 如果zzw不是作为行的结尾，那么它不会被匹配
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111248104.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111248104.jpg)
 
 于是结合`^`和`$`我们就不难猜测`^zzw$`匹配的是某行中只有zzw这个字符串了。
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111249105.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111249105.jpg)
 
 > 而`^$`匹配的则是一个空行，这个空行中不包含任何字符串。
 
@@ -247,7 +249,7 @@ H -->I(创建main方法)
 > 
 > 显然`\bzzw\b`匹配的就是zzw的前后必须是空格符号、标点符号或换行符号的zzw。
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111249106.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111249106.jpg)
 
 ----
 
@@ -271,7 +273,7 @@ H -->I(创建main方法)
 
 - 例子如下：
   
-  ![img](https://img.jbzj.com/file_images/article/202112/20211219111249107.jpg)
+  ![](https://img.jbzj.com/file_images/article/202112/20211219111249107.jpg)
   
   上面的四个例子从左到右依次表示：
   
@@ -315,7 +317,7 @@ H -->I(创建main方法)
 
 更常用的有`[^aeiou]`匹配元音之外的字符、`[0-9a-zA-Z]`匹配任何数字、字母（大写和小写）和下划线，这等同于`\w`、`[^0-9a-zA-Z]`匹配任何非数字、字母（大写和小写）和下划线，这等同于`\W`
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111250108.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111250108.jpg)
 
 **B、字符转义**
 
@@ -323,7 +325,9 @@ H -->I(创建main方法)
 > 
 > 如果我们希望把他们看作一般的字符去匹配字符串，并且恰好他们又都不在字符类(如`[&]`中)，我们就需要使用`\`(反斜杠)进行转义了。
 
-如我们可以使用www.jb51.net来匹配www.jb51.net。 我们可以用\*来匹配字符串中的*(通配符)。 我们还可以通过\\来匹配\。举例如下：![img](https://img.jbzj.com/file_images/article/202112/20211219111250109.jpg) 
+如我们可以使用www.jb51.net来匹配www.jb51.net。 我们可以用\*来匹配字符串中的*(通配符)。 我们还可以通过\\来匹配\。举例如下： 
+
+![](https://img.jbzj.com/file_images/article/202112/20211219111250109.jpg)
 
 **C、反义**
 
@@ -333,7 +337,7 @@ H -->I(创建main方法)
 
 如`a[^b]`匹配a和a后面不是b的字符。又如`<asp[^>]>`表示匹配`<asp和其后面的字符不是>`的字符。举例如下：
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111251110.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111251110.jpg)
 
 ----
 
@@ -368,7 +372,9 @@ H -->I(创建main方法)
 
 对于`aabab`这个要 匹配的字符串而言，使用`a.*b`会匹配`aabab`，而如果使用`a.*?b`就会匹配`aab`和`ab`，而不是匹配所有。
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111251111.jpg)**正则表达式之字符的运算**
+![](https://img.jbzj.com/file_images/article/202112/20211219111251111.jpg)
+
+**正则表达式之字符的运算**
 
 **A.替换**
 
@@ -379,8 +385,8 @@ H -->I(创建main方法)
 > 在一般的或运算中0 0结果为0, 0 1结果为1， 1 0结果为1， 1 1结果为1。
 
 > 那么在正则表达式中同样是这样，如果一个都匹配不上就不匹配；如果有一个能匹配上就匹配一个；如果两个都能匹配上，就匹配两个。 举例如下：
-> 
-> ![img](https://img.jbzj.com/file_images/article/202112/20211219111252112.jpg) 
+
+![](https://img.jbzj.com/file_images/article/202112/20211219111252112.jpg)
 
 **B.分组**
 
@@ -398,7 +404,7 @@ H -->I(创建main方法)
 
 > 又如`(\d{1,3}\.){3}\d{1,3}`也用了分组的运算方式，它可以用来匹配简单的IP地址，如下所示：
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111252113.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111252113.jpg)
 
 **C.反向引用**
 
@@ -414,7 +420,7 @@ H -->I(创建main方法)
 >    
 >    下面的几个例子是使用数字命名的反向引用：
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111252114.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111252114.jpg)
 
 > 其中我们可以看到第一个和第二个匹配的并不相同---第一个匹配的是两个任意单词字符组成的单词，而第二个由于是使用了反向引用，那么它就必须是两个重复单词字符组成的单词。
 > 
@@ -426,7 +432,7 @@ H -->I(创建main方法)
 > 
 > 当然，如果我们希望只是将之看作一个整体，而不希望给其编号，可以使用`(?:expression)`的方式。如下所示：
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111252115.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111252115.jpg)
 
 另外，下面几个也是常用的分组：
 
@@ -457,7 +463,7 @@ H -->I(创建main方法)
 
 其中`(?<=expression)`又称为**零宽度正回顾后发断言**，它断言自身位置的前面能够匹配表达式expression。如`(?<=\ban)\w+\b`可以匹配除字符串an之外的部分。
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111253116.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111253116.jpg)
 
 **E.负向零宽度断言**
 
@@ -465,7 +471,7 @@ H -->I(创建main方法)
 
 如`\b\w{3}(?!\d)`匹配的是后面不是数字的以三个单词字符开头的三个单词字符。如下所示：
 
-![img](https://img.jbzj.com/file_images/article/202112/20211219111253117.jpg)
+![](https://img.jbzj.com/file_images/article/202112/20211219111253117.jpg)
 
 **F.优先级顺序**
 
@@ -2410,7 +2416,7 @@ public class step8 {
  float l2 = l1.floatValue();     //Integer包装类转化为double型
  double l3 = l1.doubleValue();   //Integer包装类转化为int类型
  int l4 = l1.intValue();
- 
+
  输出：288是一样的288和288.0和288.0
 ```
 
@@ -3194,7 +3200,7 @@ java.util 包中的，是需要我们自己导入的。
 
 * indexOf 返回某个对象在列表中的index。
 
-*  sort 对列表进行排序。
+* sort 对列表进行排序。
 
 ```java
 import java.util.ArrayList;
@@ -3221,7 +3227,6 @@ public static void main(String[] args) {    // 用ArrayList存储编程语言的
         }
     }
 }
-
 ```
 
 ![](https://img3.sycdn.imooc.com/5c1348aa0001f99411720311.jpg)
@@ -3572,9 +3577,6 @@ Constants_C调用getDescription()方法为：我是枚举成员C
 Constants_D调用getDescription()方法为：null
 Constants_D调用getI()方法为：7
 ```
-
-
-
 
 分析：
 
