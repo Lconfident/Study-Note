@@ -6,7 +6,7 @@
 
 2. [git学习](https://github.com/Lconfident/Study-Note/blob/main/Git%E5%90%84%E6%8C%87%E4%BB%A4%E7%9A%84%E6%9C%AC%E8%B4%A8.md)
 
-3. vim学习
+3. [vim学习](https://github.com/Lconfident/Study-Note/blob/main/Vim%E7%A5%9E%E7%BA%A7%E4%BB%A3%E7%A0%81%E4%BF%AE%E7%82%BC.md)
 
 4. 数据结构与算法笔记
 
