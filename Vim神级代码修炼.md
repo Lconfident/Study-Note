@@ -15,17 +15,17 @@
 
 先说说它在哪里用吧，这里推荐一个类似于搜狗输入法的软件，可以保证你在任何编辑器里用vim来编辑。
 链接如下：
-**https://doc.run/pd/329fefe95b95e77c**
-在windows先得下载一个gvim来先练练手vim的使用方法，就像上战场之前，士兵要先在训练基地训练一样，声明一点，gvim是一个文本编辑器
-**https://link.zhihu.com/?target=https%3A//github.com/vim/vim-win32-installer/releases/download/v8.2.0227/gvim_8.2.0227_x64_signed.exe**
-备注：为了适应Windows系统，在使用globalvim时有的功能可能会无法实现，但在gvim里可以使用。
-++++++++++++++++++++++++++++++++++++++++++
 
+[vim](https://doc.run/pd/329fefe95b95e77c)
+在windows先得下载一个gvim来先练练手vim的使用方法，就像上战场之前，士兵要先在训练基地训练一样，声明一点，gvim是一个文本编辑器
+[gvim](https://link.zhihu.com/?target=https%3A//github.com/vim/vim-win32-installer/releases/download/v8.2.0227/gvim_8.2.0227_x64_signed.exe)
+备注：为了适应Windows系统，在使用globalvim时有的功能可能会无法实现，但在gvim里可以使用。
+---
 ### 新手引导
 
 1. 打开gvim，然后不要碰鼠标！不要碰鼠标！不要碰鼠标！重要的事情说三遍
 2. 按<kbd>Shift</kbd>kbd>+<kbd>:</kbd>kbd>之后，输入"shell"。说明：此时进入命令解析器界面
-3. 输入"vimtutor"，此时进入gvim自带的官方教程，可以进行学习。
+3. 输入`vimtutor`，此时进入gvim自带的官方教程，可以进行学习。
 
 ---
 
@@ -54,7 +54,7 @@
 
 ### 光标移动
 
-| 方位  | 按键           |
+| 方位  | 按键  |
 |:---:|:------------:|
 | 上   | <kbd>K</kbd> |
 | 下   | <kbd>J</kbd> |
@@ -198,7 +198,7 @@ d            delete（删除）
 c            change（删除文本，将删除的文本保存到寄存器，并进入插入模式
 ```
 
-+++++++++++++++
+----
 
 ### 动词 （操作符 Operator）+  名词（动作 Motions）组合
 
@@ -225,7 +225,7 @@ const learning = "vim";
 
 - 修改整行：cc
 
-++++++
+----
 
 ### 文本对象（Test object）
 
@@ -269,7 +269,7 @@ t     XML标签
 `     一对``
 ```
 
-------------
+---
 
 ### 单词导航
 
@@ -296,8 +296,6 @@ contsant hello = "vim";
 0                跳到本行的第一个字符
 ^                跳到本行的第一个非空字符
 $                跳到本行的最后一个字符
-g_                跳到本行的最后一个非空字符
-n|                跳到本行的n列
 ```
 
 ### 行内搜索
@@ -333,7 +331,7 @@ n<kbd>g</kbd>                跳到指定行
 <kbd>n%</kbd>                跳到文件的n%
 ```
 
----------------------
+---
 
 ### 滚动
 
