@@ -3555,9 +3555,9 @@ doit2 Constants_B
 >                //遍历数组
 >                System.out.println(c + "与" + arrays[i] + "的比较结果：" + c.compareTo(arrays [i]));
 >            }
->    
+>             
 >        }
->    
+>             
 >        public static void main(String[] args) {
 >            Compare(Constants.valueOf("Constants_B"));
 >        }
@@ -3864,7 +3864,7 @@ true
 
 ### 引用对象的二三事
 
-primitive 主数据类型变量
+primitive ==主数据=类型变量
 
 ```Java
 byte x = 7;
