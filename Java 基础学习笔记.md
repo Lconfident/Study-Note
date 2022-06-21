@@ -134,7 +134,7 @@ Java语言编写的程序既是 <u>编译型</u> ，又是 <u>解释型</u> 的
 比如上面的HelloWorld.java修改如下：
 
 　 　`package org.javaresearch;`
-
+```java
       public class HelloWorld
     
         {
@@ -148,6 +148,7 @@ Java语言编写的程序既是 <u>编译型</u> ，又是 <u>解释型</u> 的
           }
     
        }
+```
 
 ---
 
