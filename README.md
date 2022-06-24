@@ -12,6 +12,8 @@
 
 5. [C++学习](https://github.com/Lconfident/Study-Note/blob/main/C%2B%2B%E5%AD%A6%E4%B9%A0.md)
 
+6. 软考笔记 
+
 ----
 
 ![image](https://github.com/Lconfident/Pictures/blob/main/f525a3b4f0d47c28b673a6061716a39.jpg)
