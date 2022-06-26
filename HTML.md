@@ -199,3 +199,136 @@ div起分隔作用，是分割内容常使用的标签
 > `font-size:1.4em`等于`font-size:14px`
 >
 > 以此类推相当于初始`font-size=62.5%`后，em与px单位就只有10倍差距，以便方便计算与设置em长度数值使用。
+
+### B
+
+**加粗**
+
+`<b>B</b>`
+
+<b>B</b>
+
+### strong
+
+Html strong加粗标签与html B加粗标签显示效果相同
+
+`<strong> Strong </strong>` 
+
+### em
+
+**强调**
+
+`<em>em</em>`
+
+<em>em</em>
+
+### i
+
+Html i斜体标签与html em强调标签效果相同
+
+`<i>斜体</i>`
+
+<i>斜体</i>
+
+### u
+
+`<u>下划线</u>`
+
+<u>下划线</u>
+
+### s
+
+`<s>删除线</s>`
+
+<s>删除线</s>
+
+### img
+
+`<img src = "路径" width = "175" height = "45" alt = ""/>`
+
+* `src` ：路径
+* `width` ：宽度
+* `height`：高度
+* `alt`：图片备注
+
+`<img src = "https://github.com/Lconfident/Pictures/blob/main/f525a3b4f0d47c28b673a6061716a39.jpg" alt = "个人图片"/>`
+
+<img src = "https://github.com/Lconfident/Pictures/blob/main/f525a3b4f0d47c28b673a6061716a39.jpg" alt = "个人图片"/>
+
+### sup&sub
+
+上标：`<sup>上浮内容</sup>`
+
+<sup>上浮内容</sup>
+
+下标：`<sub>下沉内容</sub>`
+
+<sub>下沉内容</sub>
+
+### nobr
+
+禁止换行内容标签
+
+不换行内容放入`<nobr></nobr>`之间即可
+
+### hr
+
+水平分割线
+
+`<hr/>`
+
+<hr/>
+
+### form
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>html form表单实例</title>
+</head>
+<body>
+<form action="" method="get"> 
+<input name="" type="text" size="22" /> 
+<input name="" type="submit" value="提交" /> 
+</form> 
+</body>
+</html>
+```
+
+
+
+> 常常我们使用在一个网页中数据提交标签
+>
+> 比如我们留言板、评论等可以填写数据，提交处理地方都需要表单标签
+>
+> 而form表单标签内放输入框input、单选、多选、select下拉列表、提交按钮等标签内容。
+
+form表单区域标签语法
+
+* `<form action = "" method = "get"> </form>`
+
+  > 值为get时，是通过URL传递参数,这个时候我们通过网址URL能看见自己填写的内容
+
+* `<form action = "" method = "post"> </form>`
+
+  > 值为post时，是通过类似缓存传递参数，URL是不能看到form表单填写的内容
+
+### label
+
+一般要实现点击单选按钮框文字或多选按钮框文字对应选择按钮被选择，使用label标签即可
+
+点击`<label>`标签文字时，实现对应控件被选择
+
+需要对应表单控件`id`的值与`label`标签内的`for`值相同
+
+```html
+<form action="" method="get">
+性别：<br/>
+<input name="sex" id="man" type="radio" value=""/>
+<label for="man">男</label>
+<input name="sex" id="woman" type="radio" value=""/>
+<label for="woman">女</label> 
+</form> 
+```
+
