@@ -10,7 +10,7 @@
 
 4. 数据结构与算法笔记
 
-5. [C++学习](https://github.com/Lconfident/Study-Note/blob/main/C%2B%2B%E5%AD%A6%E4%B9%A0.md)
+5. [C++学习](https://github.com/Lconfident/Study-Note/blob/main/C%2B%2B.md)
 
 6. 软考笔记 
 
