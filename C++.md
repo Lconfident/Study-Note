@@ -850,3 +850,140 @@ int &ci2 = i;//错误，试图让一个非常量引用指向一个常量对象
 
 **指针和`const`**
 
+类似于常量引用，**指向常量的指针不能改变其所指对象的值**。要想存放常量对象的地址，只能使用指向常量的指针
+
+```c++
+const double pi = 3.14;//pi是一个常量，值不能改变
+double *ptr = &pi;//错误，ptr是一个普通指针
+const double *cptr = &pi;//正确，cptr指向常量
+*cptr = 42;//错误，不能给*cptr赋值
+```
+指针的类型必须与所指的对象类型一致，但有两种例外。
+
+第一种例外是允许一个常量指针指向一个非常量对象
+```c++
+double dval = 3.14;
+const double *cptr = &dval;//正确，但是不可以通过cptr改变dval的值
+```
+
+
+
+> 所谓指向常量的引用或指针，只不过是指针或引用“自以为是”，它们觉得直接指向了常量，所以不自觉得不去改变所值对象的值，而没有规定这个对象不能通过其它途径去改变
+
+**`const`指针**
+
+指针式一个对象而引用不是，允许把指针本身定义成常量
+
+**常量指针**必须初始化，而且一旦初始化完成，它的值（也就是指针里的地址）就不能再改变
+
+```c++
+int errNum = 0;
+int *const curErr = &errNum;//curErr一直指向errNum
+const double pi = 3.14;
+const double *const pip = &pi;//pip是一个指向常量对象的常量指针
+```
+
+> 解释：离curErr最近的是`const`，意味着`curErr`本身是一个常量对象，声明符中的下一个符号是`*`，意思是`curErr`是一个常量指针，最后，该声明语句的基本数据类型指向一个`int`对象，同理pip是一个常量指针，指向一个双精度浮点型常量
+
+> pip是一个指向常量的常量指针，就意味着，不论pip所指的**对象值**还是pip自己存储的**地址**都不能改变，相反的，curErr可以去修改errNum的值
+
+**顶层`const`**
+
+众所周知，指针是一个对象，那么指针本身是不是常量和所指的对象是不是一个常量就是两个相互单独的问题
+
+> **顶层`const`**：表示指针本身是一个常量
+> **底层`const`**：表示指针所指的对象是一个常量
+>
+> ```c++
+> const int *const p = &q;//靠右的const是顶层const，靠左的const是底层const
+> const int &r = ci;//用于声明引用的const都是底层const
+> ```
+
+**`constexpr`和常量表达式**
+
+> **常量表达式**：值不会改变且编译过程即可得到计算结果的表达式
+
+```c++
+const int max_file = 20;//max_file是常量表达式
+const int limit_file = max_file + 1;//limit_file是常量表达式
+ int get_size = 27;//get—_size不是常量表达式
+const int sz = get_size;//sz不是常量表达式
+```
+
+> 一个对象（或表达式）是不是常量表达式由它的数据类型和初始值决定
+>
+> 尽管get_size 的初始值是一个字面值常量，但由于它的数据类型只是一个int 而非const int ，所以它不属于常量表达式，另一方面，尽管sz 本身是一个常量，但它的具体值直到运行时才能获取到，所以不是常量表达式
+
+> **`constexpr`变量**：
+>
+> 在一个复杂系统中，很难分辨一个初始值到底是不是常量表达式，因为对象的定义和使用根本就是两回事
+>
+> 因此，C++11新规，允许将变量声明为`constexpr`类型，以便编译器来验证变量的值是否是一个常量表达式，声明为`constexpr`的变量一定是一个常量，并且必须用常量表达式初始化
+>
+> ```c++
+> constexpr int mf = 20;
+> constexpr int limit = mf + 1;
+> ```
+>
+> 一般来说，如果我们认定变量是一个常量表达式，就把它声明为`constexpr`类型
+
+**指针和`constexpr`**
+
+必须声明一点，在`constexpr`声明中定义了一个指针，限定符`constexpr`仅对指针有效，与指针所指的对象无关
+
+```c++
+const int *p = nullprt;//p是一个指向整数常量的指针
+constexpr int *q = nullptr;//q是一个指向整数的常量指针
+```
+
+> p和q的类型不同，p是一个指向常量的指针，而q是一个常量指针，其中的关键在于`constexpr`把它所定义的对象置为了顶层`const`
+>
+> 而且，`constexpr`指针也可以指向一个非常量
+
+### 处理类型
+
+**类型别名**
+
+就是一个名字，和某种类型是同义词，它可以让复杂的类型名字变简单，还有助于理解程序员使用该类型的真实目的
+
+> **定义**类型别名
+>
+> 1. 传统方法是使用关键字`typedef`
+> ```c++
+> typedef double wages;//wages是double的同义词
+> typedef wages base,*p;//base是double的同义词，p是double*的同义词
+> ```
+> 2. 新规，使用别名定义
+> ```c++
+> using SI = Sales_item;//SI是Sales_item的同义词
+> ```
+
+> 类型别名和类型的名字**等价**，只要是类型的名字出现的地方，就能使用类型别名
+>
+> ```c++
+> wages hourly,weekly;//等效于 double hourly,weekly;
+> SI item;//等效于 Sales_item item;
+> ```
+
+**指针、常量和类型别名**
+
+```c++
+typedef char *pstring;
+const pstring cstr = 0;//cstr是指向char的常量指针
+const pstring *ps;//ps是一个指针的指针，它的对象是一个指向char的常量指针
+```
+
+> 上述两条声明语句的基本数据类型都是`const pstring`，和过去一样，`const`是对给定类型的修饰。`pstring`实际上就是指向char的指针，因此`const pstring`就是指向char的指针，而非指向char常量的指针
+>
+> 遇到一条使用类型别名的声明语句，人们总是错误地尝试把类型别名替换成它本来的样子，来理解语句的含义：
+>
+> ```c++
+> const char *cstr = 0;//这是错误理解
+> ```
+>
+> 在强调一遍，这是错误理解。声明语句中用的`pstring`，其基本数据类型是指针。可是重新理解的时候，数据类型变成了`char`，`*`变成了声明符的一部分。前后两种含义截然不同，前者声明了一个指向char的常量指针，改写之后的声明了一个指向const char的指针
+
+**`auto`类型说明符**
+
+
+
