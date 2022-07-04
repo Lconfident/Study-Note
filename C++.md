@@ -1009,7 +1009,7 @@ const pstring *ps;//ps是一个指针的指针，它的对象是一个指向char
 > 如果希望是一个顶层const
 >
 > ```c++
-> const auto f = ci;//ci是int，f是cont int
+> const auto f = ci;//ci是int，f是const int
 > ```
 >
 > 还可应用引用
