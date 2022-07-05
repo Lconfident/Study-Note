@@ -1022,3 +1022,46 @@ const pstring *ps;//ps是一个指针的指针，它的对象是一个指向char
 
 **decltype类型指示符**
 
+编译器分析表达式并得到它的类型，但不实际计算表达式的值
+
+```c++
+const int ci = 0, &cj = ci;//常量ci，引用cj
+decltype (ci) x = 0;//x的类型：const int
+decltype (cj) y = x;//y的类型：const int&,y绑定到x
+decltype (cj) z;//错误，这是一个引用，必须初始化 
+```
+
+**decltype和引用**
+
+如果decltype使用的表达式不是一个变量，，就返回与表达式结果对应的类型
+
+```c++
+//decltype 的结果可以是引用类型
+int i = 42;*p = &i;&r = i;//指针p和引用i
+decltype (r+0) b;//正确；加法的结果是int，因此b是一个（未被初始化的）int
+decltype(*p) c;//错误；解引用符*，得到引用类型int&，必须初始化
+```
+
+如果表达式加上括号，与不加括号有区别
+加上括号，编译器就会把它当成一个表达式
+> 变量是一种可以作为赋值语句左值的特殊表达式，所以这样的decltype就会得到引用类型
+
+```c++
+decltype ((i)) d; //错误，d是int &,必须初始化
+decltype (i) e;//正确，e是一个未初始化的int
+```
+
+### 自定义数据类型
+
+**定义Sales_data类型**
+
+```c++
+struct Sales_data {
+    std::string bookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+};
+```
+
+**使用Saidles_data类**
+
