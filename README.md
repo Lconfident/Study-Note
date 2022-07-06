@@ -8,9 +8,9 @@
 
 3. [vim学习](https://github.com/Lconfident/Study-Note/blob/main/Vim%E7%A5%9E%E7%BA%A7%E4%BB%A3%E7%A0%81%E4%BF%AE%E7%82%BC.md)
 
-4. 数据结构与算法笔记
+4. 数据结构与算法笔记（参考邓俊辉老师的数据结构课程）
 
-5. [C++学习](https://github.com/Lconfident/Study-Note/blob/main/C%2B%2B.md)
+5. [C++学习](https://github.com/Lconfident/Study-Note/blob/main/C%2B%2B.md)（参考C++Prime）
 
 6. 软考笔记 
 
