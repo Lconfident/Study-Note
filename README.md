@@ -12,9 +12,9 @@
 
 5. [C++学习](https://github.com/Lconfident/Study-Note/blob/main/C%2B%2B.md)（参考C++Prime）
 
-6. 软考笔记 
+6. 软考笔记
 
-7.[Markdown教程](https://github.com/Lconfident/Study-Note/blob/main/Markdown%E6%95%99%E7%A8%8B.md)
+7. [Markdown教程](https://github.com/Lconfident/Study-Note/blob/main/Markdown%E6%95%99%E7%A8%8B.md)
 
 ----
 
