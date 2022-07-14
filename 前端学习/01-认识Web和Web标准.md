@@ -1,7 +1,6 @@
----
-titile：01-认识Web和Web标准
-accomplish：yes
----
+| title               | accomplish |
+| ------------------- | ---------- |
+| 01-认识Web和Web标准 | true       |
 
 ## Web、网页和浏览器
 
@@ -55,4 +54,6 @@ Web标准不是某一个标准，而是由W3C组织和其他标准化组织制�
 - CSS（Cascading Style Sheets）：层叠样式表。从**审美**的角度美化页面的**样式**。相当于人的衣服和打扮。
 - JS：JavaScript。从**交互**的角度描述页面的**行为**。相当于人的动作，让人有生命力。
 
-**3、打个比方**：（拿举例）
+**3、打个比方**：（拿孙悟空举例吧）
+
+![html](https://i0.hdslb.com/bfs/article/e550c8fc939fcd1756a5150596a17c315fff4c04.gif)
