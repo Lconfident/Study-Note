@@ -1,5 +1,5 @@
-|    title    | accomplish |
-| :---------: | ---------- |
+| title       | accomplish |
+| :---------- | ---------- |
 | 03-初始HTML | true       |
 
 ### 编辑器相关
