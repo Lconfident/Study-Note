@@ -743,3 +743,88 @@ text 就是“文本”，area 就是“区域”。
 
 运行效果： 打开网页后，在IE 8中播放正常，播放时网页上显示一片空白。在google浏览器中无法播放。
 
+注：在HTML5中新增了`<video>`标签播放视频。
+
+#### `<object>`标签：播放多媒体文件（音频、视频等）
+
+主要应用IE浏览器，它是W3C规范。
+
+**属性：**
+
+- `classid`：指定Flash插件的ID号，一般存在于注册表中。
+- `codebase`：如果Flash插件不存在，则从codebase指定的地址下载。
+- `<param>`标签的主要作用：设置具体的详细参数。
+
+**总结：在网页中插入Flash时，为了同时兼容多种浏览器，需要将`<object>`标签和`<embed>`标签标记一起使用，但使用的顺序是：`<object>`中嵌套`<embed>`标记。** 举例：
+
+```html
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="778" height="202">
+  <param name="movie" value="images/banner.swf">
+  <param name="quality" value="high">
+  <param name="wmode" value="transparent">
+  <embed src="images/banner.swf" width="778" height="202" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+</object>
+```
+
+#### `<marquee>`：滚动字幕标签
+
+如果在这个标签里设置了内容，那么，打开网页时，内容会像弹幕一样自动移动。 **属性：**
+
+- `direction="right"`：移动的目标方向。属性值可以是：`left`（从右向左移动，默认值）、`right`（从左向右移动）、`up`（从下向上移动）、`down`（从上向下移动）。
+- `behavior="slide"`：行为方式。属性值可以是：`slide`（只移动一次）、`scroll`（循环移动，默认值）、`alternate`（循环移动）、。 `alternate`和`scroll`属性值都是循环移动，区别在于：假设在`direction="right"`的情况下，`behavior="scroll"`表示从左到右、从左到右、从左到右···`behavior="alternate"`表示从左到右、从右到左、从左到右···
+- `scrollamount="30"`：移动的速度
+- `loop="3"`: 循环多少圈。负值表示无限循环
+- `scrolldelay="1000"`：移动一次休息多长时间。单位是毫秒。
+
+举例：
+
+```html
+	<marquee behavior="alternate" direction="down"  width="300" height="200" bgcolor="#8c5dc1">我来了</marquee>
+```
+
+![image](https://camo.githubusercontent.com/83cd508e1e8900fc02fd4854bfb2eed3e76f27b2ce98fc0824442a8bf7ac121b/687474703a2f2f696d672e736d79687661652e636f6d2f323031352d31302d30322d636e626c6f67735f68746d6c5f30342e676966)
+
+### html废弃标签介绍
+
+HTML现在只负责语义，而不负责样式。但是HTML一开始，连样式也包办了。这些样式的标签，都已经被废弃。
+
+2004年之前的东西：
+
+```
+<font size="9" color="red">哈哈</font>
+```
+
+下面这些标签都是css钩子，而不是原意：
+
+```
+	<b>加粗</b>
+	<u>下划线</u>
+	<i>倾斜</i>
+    <del>删除线</del>
+	<em>强调</em>
+	<strong>强调</strong>
+```
+
+这些标签，是有着浓厚的样式的作用，干涉了css的作用，所以HTML抛弃了他们。
+
+类似的还有水平线标签：
+
+```
+<hr />
+```
+
+换行标签：
+
+```
+<br />
+```
+
+但是，网页中99.9999%需要换行的时候，是因为另起了一个段落，所以要用p，而不要用`<br />`。不到万不得已，不要用br标签。
+
+标准的div+css页面，只会用到种类很少的标签：
+
+```
+div  p  h1  span   a   img   ul   ol    dl    input
+```
+
+知道每个标签的特殊用法、属性。比如a标签，img的属性。
